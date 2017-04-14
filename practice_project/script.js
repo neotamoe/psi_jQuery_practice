@@ -20,13 +20,14 @@ function onReady(){
   appendSquaresToDom(numberOfSquares);
 }
 
-function highlightASquare(index){
+function highlightASquare(){
   //This variable stores an array of the elements with the 'square' class
   var arrayOfSquares = $('.square');
 
 }
 
 
+//You don't need to change this function:
 function appendSquaresToDom(number){
   var squaresToAppend = "";
  //concatenate string of squares

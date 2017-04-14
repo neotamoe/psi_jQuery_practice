@@ -8,6 +8,8 @@ You will need to add to the highlightASquare function, you are also welcome to w
 
 VERY USEFUL HINT: [jQuery has good methods for finding and for changing an element's class](https://api.jquery.com/category/manipulation/class-attribute/)
 
+ANOTHER HINT: There is an array in the highlightASquare function. You will need to find a way to keep track of an index of that array. 
+
 ## jQuery Pro Practice Project (optional)
 
 Write code to make the number on the DOM countdown each second. Only one number should be displayed on the DOM at a time.
