@@ -14,18 +14,20 @@ $(document).ready(onReady);
 //Function that runs when html is fully loaded:
 function onReady(){
   //click listener to button:
-  $('.change-highlight').on('click', highlightASquare)
-
+  $('.change-highlight').on('click', highlightASquare);
   //call to put starting squares on DOM
   appendSquaresToDom(numberOfSquares);
 }
 
+var counter=0;
+
 function highlightASquare(){
   //This variable stores an array of the elements with the 'square' class
-  var arrayOfSquares = $('.square');
+  var arrayOfSquares = $('.square');  //given
+  $( ".square:nth-of-type(1)").addClass('highlight');
 
+  // $('.square):nth-of-type(' + 'counter' + ')').addClass('highlight');
 }
-
 
 //You don't need to change this function:
 function appendSquaresToDom(number){
