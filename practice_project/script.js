@@ -8,7 +8,7 @@
   you are also welcome to write more than the given functions.
 */
 var numberOfSquares = 10;
-var counter=1;
+var counter=1;  //global counter (used to assign each square a value)
 
 $(document).ready(onReady);
 
@@ -24,22 +24,23 @@ function onReady(){
 
 function highlightASquare(){
   //This variable stores an array of the elements with the 'square' class
-  var arrayOfSquares = $('.square');  //given
-
+  var arrayOfSquares = $('.square');
+  //highlights first box, unhighlights last box (if needed)
   if (counter === 1) {
     $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
     $( ".square:nth-of-type(" + (numberOfSquares) + ")").removeClass('highlight');
     counter++;
+  //highlights subsequent boxes, unhighlights previous box
   } else if(counter<numberOfSquares){
     $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
     $( ".square:nth-of-type(" + (counter-1) + ")").removeClass('highlight');
     counter++;
+  //highlights last box, removes previous box, resets counter
   } else if (counter === numberOfSquares) {
     $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
     $( ".square:nth-of-type(" + (counter-1) + ")").removeClass('highlight');
     counter=1;
   }
-  // $('.square):nth-of-type(' + 'counter' + ')').addClass('highlight');
 }
 
 //You don't need to change this function:
