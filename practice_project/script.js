@@ -8,6 +8,7 @@
   you are also welcome to write more than the given functions.
 */
 var numberOfSquares = 10;
+var counter=1;
 
 $(document).ready(onReady);
 
@@ -15,17 +16,29 @@ $(document).ready(onReady);
 function onReady(){
   //click listener to button:
   $('.change-highlight').on('click', highlightASquare);
+  console.log(counter);
   //call to put starting squares on DOM
   appendSquaresToDom(numberOfSquares);
 }
 
-var counter=0;
 
 function highlightASquare(){
   //This variable stores an array of the elements with the 'square' class
   var arrayOfSquares = $('.square');  //given
-  $( ".square:nth-of-type(1)").addClass('highlight');
 
+  if (counter === 1) {
+    $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
+    $( ".square:nth-of-type(" + (numberOfSquares) + ")").removeClass('highlight');
+    counter++;
+  } else if(counter<numberOfSquares){
+    $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
+    $( ".square:nth-of-type(" + (counter-1) + ")").removeClass('highlight');
+    counter++;
+  } else if (counter === numberOfSquares) {
+    $( ".square:nth-of-type(" + counter + ")").addClass('highlight');
+    $( ".square:nth-of-type(" + (counter-1) + ")").removeClass('highlight');
+    counter=1;
+  }
   // $('.square):nth-of-type(' + 'counter' + ')').addClass('highlight');
 }
 
