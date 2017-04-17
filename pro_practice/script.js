@@ -9,11 +9,11 @@
   BONUS 2: Make something cool happen using a jQuery animation when the timer gets to zero.
 */
 
-$(document).ready(timer);
+$(document).ready(function(){
 
+var counter = $('.count').text();
 
-function timer (){
-  var counter = $('.count').text();
+// function timer (){
   setInterval(function(){
     counter--;
     if (counter<1){
@@ -21,17 +21,19 @@ function timer (){
       $('div').animate({
         fontSize: '200px',
       }, "slow");
-      clearInterval(timer);
+      clearInterval();
     } else {
       $('.count').text(counter);
     }
   }, 1000);
-}
-
-// function resetCounter(){
-//   var counterResetValue=$('.count').text(10);
-//   counter=counterResetValue;
 // }
 
 
-$('#button').on('click', clearInterval(timer));
+  $('#button').on('click', function(){
+    $('div').animate({
+      fontSize: '78px',
+    }, "slow");
+    counter=11;
+  });
+
+});  //end document ready
